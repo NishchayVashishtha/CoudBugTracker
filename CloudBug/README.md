@@ -6,8 +6,19 @@ A comprehensive bug tracking and project management web application built with F
 ![Flask](https://img.shields.io/badge/Flask-3.0.3-green.svg)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
+## 🌐 Live Demo
+
+**Try it now:** [https://bug-tracker-app-ndtk.onrender.com](https://bug-tracker-app-ndtk.onrender.com)
+
+**Default Login Credentials:**
+- Email: `admin@app.com`
+- Password: `password`
+
+⚠️ **Note:** Please change the password after first login!
+
 ## 📋 Table of Contents
 
+- [Live Demo](#-live-demo)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
@@ -16,6 +27,7 @@ A comprehensive bug tracking and project management web application built with F
 - [Usage](#usage)
 - [User Roles](#user-roles)
 - [Deployment](#deployment)
+- [Testing](#testing)
 - [API Endpoints](#api-endpoints)
 - [Screenshots](#screenshots)
 - [Contributing](#contributing)
@@ -242,6 +254,8 @@ CloudBug implements a role-based access control system with four distinct roles:
 
 CloudBug is pre-configured for deployment on Render with the included `render.yaml` file.
 
+**Live Example:** [https://bug-tracker-app-ndtk.onrender.com](https://bug-tracker-app-ndtk.onrender.com)
+
 #### Step 1: Prepare Your Repository
 ```bash
 # Initialize git (if not already done)
@@ -318,6 +332,47 @@ heroku run python app.py create
 4. Set up virtual environment
 5. Install requirements
 6. Initialize database
+
+## 🧪 Testing
+
+### Complete Testing Guide
+
+A comprehensive testing guide is available in [TESTING_GUIDE.md](TESTING_GUIDE.md) that covers:
+
+- ✅ Initial setup and admin login
+- ✅ User management testing
+- ✅ Project creation testing
+- ✅ Ticket submission and updates
+- ✅ Role-based access control testing
+- ✅ Dashboard and analytics testing
+- ✅ System logs verification
+- ✅ Security testing (SQL injection, XSS)
+- ✅ Performance testing
+
+### Quick Test Steps
+
+1. **Access the live app:** [https://bug-tracker-app-ndtk.onrender.com](https://bug-tracker-app-ndtk.onrender.com)
+
+2. **Login as Admin:**
+   - Email: `admin@app.com`
+   - Password: `password`
+
+3. **Test Core Features:**
+   - Create a new project
+   - Register new users and approve them
+   - Submit bug tickets
+   - Assign developers to tickets
+   - Update ticket status
+   - Add comments
+   - View dashboard analytics
+   - Check system logs
+
+4. **Test Different Roles:**
+   - Create users with different roles (Admin, Project Manager, Developer, Submitter)
+   - Login as each role and verify access permissions
+   - Ensure role-based restrictions work correctly
+
+For detailed testing procedures, see [TESTING_GUIDE.md](TESTING_GUIDE.md)
 
 ## 🔌 API Endpoints
 
