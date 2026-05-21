@@ -1,16 +1,15 @@
-services:
+databases:
   # 1. The PostgreSQL Database
-  - type: pserv
-    name: bug-tracker-db
+  - name: bug-tracker-db
     plan: free
-    # (Lines deleted here: databaseName aur user ab zaroorat nahi hai)
 
+services:
   # 2. The Python Web Service
   - type: web
     name: bug-tracker-app
     plan: free
     runtime: python
-    rootDir: CloudBug  # Yeh line add ki hai taaki Render sahi folder mein commands run kare
+    rootDir: CloudBug
     buildCommand: "pip install -r requirements.txt"
     startCommand: "gunicorn app:app"
     envVars:
