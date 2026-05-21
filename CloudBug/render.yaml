@@ -1,0 +1,24 @@
+services:
+  # 1. The PostgreSQL Database
+  - type: pserv
+    name: bug-tracker-db
+    plan: free
+    databaseName: bug_tracker
+    user: bug_tracker_user
+
+  # 2. The Python Web Service
+  - type: web
+    name: bug-tracker-app
+    plan: free
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: bug-tracker-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: PYTHON_VERSION
+        value: "3.11.0"
